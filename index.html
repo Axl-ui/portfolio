@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Axl Kenji M. Garcia — Full-Stack Developer Portfolio">
+    <meta name="author" content="Axl Kenji M. Garcia">
+    <title>Axl Kenji M. Garcia | Full-Stack Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Lenis smooth scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body>
+
+<!-- ── SCROLL PROGRESS BAR ── -->
+<div id="scrollProgress"></div>
+
+
+<!-- ── LOADING SCREEN ── -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+        <div class="loading-logo">AKMG</div>
+        <div class="loading-bar-wrap">
+            <div class="loading-bar"></div>
+        </div>
+        <p class="loading-text">Initializing...</p>
+        <div class="loading-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Project screenshot">
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+    <div id="lightboxDots" class="lightbox-dots"></div>
+</div>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="nav-logo" aria-label="Back to top">AKMG</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<main>
+<!-- =============================================
+     HERO SECTION — 3.1
+     ============================================= -->
+<section id="hero" class="hero">
+
+    <!-- Particles Canvas -->
+    <canvas id="heroParticles" class="hero-particles"></canvas>
+
+    <!-- Background geometric shapes -->
+    <div class="hero-bg">
+        <div class="hero-bg-circle hero-bg-circle--1"></div>
+        <div class="hero-bg-circle hero-bg-circle--2"></div>
+        <div class="hero-bg-grid"></div>
+    </div>
+
+    <div class="container hero-container">
+
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+            <span class="hero-eyebrow"><span id="typedText"></span><span class="typed-cursor">|</span></span>
+            <h1 class="hero-name">
+                Axl Kenji<br>
+                <span class="hero-name-accent">M. Garcia</span>
+            </h1>
+            <p class="hero-sub">
+                BS Information Systems · Davao del Norte State College
+            </p>
+            <p class="hero-bio">
+                I build practical, real-world web applications — from HR management systems
+                to multi-organization platforms. Passionate about turning complex problems
+                into clean, functional solutions.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="bi bi-grid-fill"></i> View Projects
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="bi bi-envelope"></i> Contact Me
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">10+</span>
+                    <span class="hero-stat-label">Modules Built</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">6</span>
+                    <span class="hero-stat-label">User Role Types</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">15+</span>
+                    <span class="hero-stat-label">Technologies</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Profile Card -->
+        <div class="hero-card">
+            <div class="hero-card-inner">
+                <div class="hero-avatar">
+                    <img src="assets/images/profile.jpg"
+                         alt="Axl Kenji M. Garcia"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hero-avatar-placeholder">
+                        <span>AKG</span>
+                    </div>
+                </div>
+                <div class="hero-card-info">
+                    <h3 class="hero-card-name">Axl Kenji M. Garcia</h3>
+                    <p class="hero-card-role">Full-Stack Developer</p>
+                    <div class="hero-card-tags">
+                        <span class="hero-tag">PHP</span>
+                        <span class="hero-tag">MySQL</span>
+                        <span class="hero-tag">Bootstrap</span>
+                        <span class="hero-tag">JavaScript</span>
+                    </div>
+                    <div class="hero-card-links">
+                        <a href="https://github.com/Axl-ui" target="_blank" class="hero-card-link">
+                            <i class="bi bi-github"></i> github.com/Axl-ui
+                        </a>
+                        <a href="#contact" class="hero-card-link">
+                            <i class="bi bi-envelope-fill"></i> akmg991@gmail.com
+                        </a>
+                        <a href="tel:09513882566" class="hero-card-link">
+                            <i class="bi bi-telephone-fill"></i> 09513882566
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card-accent"></div>
+        </div>
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="hero-scroll">
+        <span>Scroll Down</span>
+        <i class="bi bi-chevron-down"></i>
+    </a>
+
+</section>
+
+
+    <!-- Marquee Skills Ticker -->
+    <div class="marquee-strip" aria-hidden="true">
+        <div class="marquee-track">
+            <span class="marquee-item"><i class="bi bi-code-slash"></i> PHP</span>
+            <span class="marquee-item"><i class="bi bi-database"></i> MySQL</span>
+            <span class="marquee-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+            <span class="marquee-item"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+            <span class="marquee-item"><i class="bi bi-bezier2"></i> jQuery</span>
+            <span class="marquee-item"><i class="bi bi-layout-text-sidebar"></i> Laravel</span>
+            <span class="marquee-item"><i class="bi bi-cpu"></i> RFID Integration</span>
+            <span class="marquee-item"><i class="bi bi-credit-card"></i> PayMongo API</span>
+            <span class="marquee-item"><i class="bi bi-envelope-fill"></i> PHPMailer</span>
+            <span class="marquee-item"><i class="bi bi-server"></i> REST APIs</span>
+            <span class="marquee-item"><i class="bi bi-git"></i> Git</span>
+            <span class="marquee-item"><i class="bi bi-shield-check"></i> Role-Based Access</span>
+            <span class="marquee-item"><i class="bi bi-code-slash"></i> PHP</span>
+            <span class="marquee-item"><i class="bi bi-database"></i> MySQL</span>
+            <span class="marquee-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+            <span class="marquee-item"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+            <span class="marquee-item"><i class="bi bi-bezier2"></i> jQuery</span>
+            <span class="marquee-item"><i class="bi bi-layout-text-sidebar"></i> Laravel</span>
+            <span class="marquee-item"><i class="bi bi-cpu"></i> RFID Integration</span>
+            <span class="marquee-item"><i class="bi bi-credit-card"></i> PayMongo API</span>
+            <span class="marquee-item"><i class="bi bi-envelope-fill"></i> PHPMailer</span>
+            <span class="marquee-item"><i class="bi bi-server"></i> REST APIs</span>
+            <span class="marquee-item"><i class="bi bi-git"></i> Git</span>
+            <span class="marquee-item"><i class="bi bi-shield-check"></i> Role-Based Access</span>
+        </div>
+    </div>
+
+    <!-- Wave: hero (dark) → about (white) -->
+    <div class="wave-divider wave-hero-about">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C240,70 480,10 720,40 C960,70 1200,10 1440,40 L1440,70 L0,70 Z"/>
+        </svg>
+    </div>
+<div class="section-editorial-num" data-num="01"><!-- =============================================
+     ABOUT SECTION — 3.2
+     ============================================= -->
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="about-grid">
+
+            <!-- Left: Image / Initials Card -->
+            <div class="about-visual reveal">
+                <div class="about-img-wrap">
+                    <img src="assets/images/profile.jpg"
+                         alt="Axl Kenji M. Garcia"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="about-img-placeholder">
+                        <span>AKG</span>
+                    </div>
+                </div>
+                <div class="about-info-card">
+                    <div class="about-info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Panabo City, Davao del Norte</span>
+                    </div>
+                    <div class="about-info-item">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span>BS Information Systems</span>
+                    </div>
+                    <div class="about-info-item">
+                        <i class="bi bi-calendar-check-fill"></i>
+                        <span>Graduating June 2026</span>
+                    </div>
+                    <div class="about-info-item">
+                        <i class="bi bi-github"></i>
+                        <a href="https://github.com/Axl-ui" target="_blank">github.com/Axl-ui</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Text Content -->
+            <div class="about-content reveal">
+                <span class="section-eyebrow">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-divider"></div>
+
+                <p class="about-bio">
+                    I'm <strong>Axl Kenji M. Garcia</strong>, a 4th-year Information Systems student at
+                    Davao del Norte State College with a passion for building practical, real-world
+                    software solutions. I specialize in full-stack web development and systems design,
+                    with hands-on experience developing applications including an HR and
+                    multi-organization management system.
+                </p>
+                <p class="about-bio">
+                    I'm driven by the idea that great technology starts with understanding people —
+                    and turning complex problems into clean, functional solutions.
+                </p>
+
+                <div class="about-highlights">
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <div>
+                            <h4>Full-Stack Development</h4>
+                            <p>From database design to front-end UI, I handle the entire development lifecycle.</p>
+                        </div>
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <div>
+                            <h4>Systems Design</h4>
+                            <p>Experienced in designing scalable, multi-tenant architectures and ERDs.</p>
+                        </div>
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div>
+                            <h4>Real-World Impact</h4>
+                            <p>Built systems actively used by real organizations and companies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="bi bi-chat-dots-fill"></i> Get In Touch
+                    </a>
+                    <a href="#projects" class="btn-outline-custom">
+                        <i class="bi bi-folder2-open"></i> See My Work
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+</div>
+<section id="whatido" class="whatido-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label">My Expertise</span>
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-subtitle">I build systems that work — from the database up to the user interface.</p>
+        </div>
+
+        <div class="whatido-grid" data-lenis-prevent>
+            <div class="whatido-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="whatido-icon">
+                    <i class="bi bi-code-slash"></i>
+                </div>
+                <h3 class="whatido-title">Web Development</h3>
+                <p class="whatido-desc">Building full-stack web applications using PHP, MySQL, JavaScript, and Bootstrap — from crafting clean UI to writing solid backend logic.</p>
+                <ul class="whatido-list">
+                    <li><i class="bi bi-check2"></i> PHP & Laravel</li>
+                    <li><i class="bi bi-check2"></i> Responsive UI with Bootstrap</li>
+                    <li><i class="bi bi-check2"></i> REST APIs & AJAX</li>
+                </ul>
+            </div>
+
+            <div class="whatido-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="whatido-icon whatido-icon--db">
+                    <i class="bi bi-database"></i>
+                </div>
+                <h3 class="whatido-title">Database Design</h3>
+                <p class="whatido-desc">Designing efficient, normalized relational databases that power complex systems — from payroll engines to multi-tenant architectures.</p>
+                <ul class="whatido-list">
+                    <li><i class="bi bi-check2"></i> MySQL Schema Design</li>
+                    <li><i class="bi bi-check2"></i> Query Optimization</li>
+                    <li><i class="bi bi-check2"></i> Multi-tenant Structures</li>
+                </ul>
+            </div>
+
+            <div class="whatido-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="whatido-icon whatido-icon--sys">
+                    <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 class="whatido-title">System Analysis</h3>
+                <p class="whatido-desc">Analyzing business requirements and translating them into functional system designs — from documentation to deployment-ready solutions.</p>
+                <ul class="whatido-list">
+                    <li><i class="bi bi-check2"></i> Requirements Gathering</li>
+                    <li><i class="bi bi-check2"></i> System Documentation</li>
+                    <li><i class="bi bi-check2"></i> Process Flow Design</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Wave: white → skills (bg-off) -->
+    <div class="wave-divider" style="background:var(--bg-white);">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill:var(--bg-off);">
+            <path d="M0,0 C360,70 1080,0 1440,50 L1440,70 L0,70 Z"/>
+        </svg>
+    </div>
+<div class="section-editorial-num" data-num="02"><!-- =============================================
+     SKILLS SECTION — 3.3
+     ============================================= -->
+<section id="skills" class="skills">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-eyebrow">What I Work With</span>
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">A toolkit built through real projects — from capstone to full-scale OJT platforms.</p>
+        </div>
+
+        <!-- Skill Icon Cards Grid -->
+        <div class="skill-cards-grid">
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #e34c26, #f06529);">
+                    <i class="bi bi-filetype-html"></i>
+                </div>
+                <span class="skill-card-name">HTML5</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #264de4, #2965f1);">
+                    <i class="bi bi-filetype-css"></i>
+                </div>
+                <span class="skill-card-name">CSS3</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #f7df1e, #e6c500);">
+                    <i class="bi bi-filetype-js"></i>
+                </div>
+                <span class="skill-card-name" style="color: var(--text-dark);">JavaScript</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #777bb4, #4f5b93);">
+                    <i class="bi bi-filetype-php"></i>
+                </div>
+                <span class="skill-card-name">PHP</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #00758f, #005c72);">
+                    <i class="bi bi-database-fill"></i>
+                </div>
+                <span class="skill-card-name">MySQL</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #7952b3, #563d7c);">
+                    <i class="bi bi-bootstrap-fill"></i>
+                </div>
+                <span class="skill-card-name">Bootstrap</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #0769ad, #0a5a8f);">
+                    <i class="bi bi-braces"></i>
+                </div>
+                <span class="skill-card-name">jQuery</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #f05032, #c0392b);">
+                    <i class="bi bi-github"></i>
+                </div>
+                <span class="skill-card-name">Git / GitHub</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #007acc, #005f99);">
+                    <i class="bi bi-arrow-left-right"></i>
+                </div>
+                <span class="skill-card-name">REST APIs</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #fb7a24, #d45f00);">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <span class="skill-card-name">AJAX</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #c9a84c, #a07830);">
+                    <i class="bi bi-bell-fill"></i>
+                </div>
+                <span class="skill-card-name">SweetAlert2</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #0d1f3c, #1a3560);">
+                    <i class="bi bi-diagram-3-fill"></i>
+                </div>
+                <span class="skill-card-name">MVC / OOP</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                    <i class="bi bi-diagram-2-fill"></i>
+                </div>
+                <span class="skill-card-name">System Analysis</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #8e44ad, #6c3483);">
+                    <i class="bi bi-table"></i>
+                </div>
+                <span class="skill-card-name">Database Design</span>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                    <i class="bi bi-cpu-fill"></i>
+                </div>
+                <span class="skill-card-name">RFID Integration</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+</div>
+
+    <!-- Wave: bg-off → education (white) -->
+    <div class="wave-divider wave-skills-edu">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,50 C360,0 1080,70 1440,20 L1440,70 L0,70 Z"/>
+        </svg>
+    </div>
+<div class="section-editorial-num" data-num="03"><!-- =============================================
+     EDUCATION SECTION — 3.4
+     ============================================= -->
+<section id="education" class="education">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Academic Background</span>
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Four years of focused study in Information Systems, culminating in two real-world capstone and internship projects.</p>
+        </div>
+
+        <div class="education-timeline">
+            <div class="edu-item reveal">
+                <div class="edu-timeline-dot">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <div class="edu-card-left">
+                            <div class="edu-school-icon">
+                                <img src="assets/images/dnsc_logo.jpg" alt="Davao del Norte State College" class="edu-school-logo">
+                            </div>
+                            <div>
+                                <h3 class="edu-degree">Bachelor of Science in Information Systems</h3>
+                                <p class="edu-school">Davao del Norte State College</p>
+                            </div>
+                        </div>
+                        <div class="edu-card-right">
+                            <span class="edu-period"><i class="bi bi-calendar3"></i> 2022 – 2026</span>
+                            <span class="edu-status">Graduating June 2026</span>
+                        </div>
+                    </div>
+                    <div class="edu-card-body">
+                        <p class="edu-description">
+                            A four-year program focused on the study and application of information technology
+                            in organizational contexts. Developed strong foundations in systems analysis and design,
+                            database management, web development, and software engineering through both
+                            academic coursework and hands-on capstone projects.
+                        </p>
+                        <div class="edu-highlights">
+                            <div class="edu-highlight-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Systems Analysis & Design</span>
+                            </div>
+                            <div class="edu-highlight-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Web Application Development</span>
+                            </div>
+                            <div class="edu-highlight-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Database Management</span>
+                            </div>
+                            <div class="edu-highlight-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Software Engineering</span>
+                            </div>
+                            <div class="edu-highlight-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Object-Oriented Programming</span>
+                            </div>
+                            <div class="edu-highlight-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Capstone Project Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</div>
+<div class="section-editorial-num" data-num="04"><!-- =============================================
+     EXPERIENCE SECTION — Phase 3.5
+     ============================================= -->
+<section id="experience" class="experience-section">
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Where I've Worked</span>
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Real-world development experience building complex, production-level systems.</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="exp-timeline">
+
+            <!-- Experience Item 1 — Nehemiah Solutions OJT -->
+            <div class="exp-item reveal">
+                <div class="exp-timeline-line">
+                    <div class="exp-dot">
+                        <i class="bi bi-briefcase-fill"></i>
+                    </div>
+                    <div class="exp-connector"></div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <div class="exp-card-left">
+                            <div class="exp-company-badge">
+                                <div class="exp-company-logo">
+                                    <img src="assets/images/nehemiah_logo.png" alt="Nehemiah Solutions" style="width:48px;height:48px;object-fit:contain;border-radius:10px;">
+                                </div>
+                                <div class="exp-company-info">
+                                    <h3 class="exp-position">Full-Stack Developer</h3>
+                                    <span class="exp-company-name">Nehemiah Solutions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-card-right">
+                            <span class="exp-type-badge"><i class="bi bi-mortarboard-fill me-1"></i>OJT / Internship</span>
+                            <span class="exp-period"><i class="bi bi-calendar3 me-1"></i>February 2026 – May 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="exp-card-body">
+                        <p class="exp-description">
+                            Served as the <strong>Full-Stack Developer</strong> for the Nehemiah Solutions Multi-Organization Management Platform — 
+                            a large-scale, multi-tenant web application built to serve diverse organizations such as clinics, offices, 
+                            government agencies, and financial institutions. Designed and developed the entire system from the ground up, 
+                            handling everything from database architecture to UI implementation.
+                        </p>
+
+                        <div class="exp-highlights">
+                            <div class="exp-highlight-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Architected a <strong>multi-tenant system</strong> where each organization operates in complete data isolation</span>
+                            </div>
+                            <div class="exp-highlight-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Built <strong>10+ modules</strong> including HRIS, Payroll, Inventory, Cashiering, Booking, and Messaging</span>
+                            </div>
+                            <div class="exp-highlight-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Integrated <strong>PayMongo payment gateway</strong> for billing and subscription management</span>
+                            </div>
+                            <div class="exp-highlight-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Implemented <strong>RFID attendance kiosk</strong> and real-time messaging between roles</span>
+                            </div>
+                            <div class="exp-highlight-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Designed a flexible <strong>role-based access system</strong> with 6 distinct user roles per organization</span>
+                            </div>
+                            <div class="exp-highlight-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Ensured <strong>fully customizable</strong> setup per client — each buyer configures their own system type</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-tech-stack">
+                            <span class="exp-tech-label">Tech Stack:</span>
+                            <div class="exp-tech-tags">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">jQuery</span>
+                                <span class="tech-tag">PHPMailer</span>
+                                <span class="tech-tag">RFID Integration</span>
+                                <span class="tech-tag">PayMongo API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Experience Item -->
+
+        </div>
+        <!-- End Timeline -->
+
+        <!-- Bottom CTA -->
+        <div class="exp-cta reveal">
+            <p class="exp-cta-text">Interested in working together or learning more about my work?</p>
+            <a href="#contact" class="btn-primary-custom">
+                <i class="bi bi-envelope-fill me-2"></i>Get In Touch
+            </a>
+        </div>
+
+    </div>
+</section>
+
+</div>
+
+    <!-- Wave: white → stats (dark) -->
+    <div class="wave-divider" style="background:var(--bg-white);">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill:var(--primary);">
+            <path d="M0,20 C480,70 960,0 1440,50 L1440,70 L0,70 Z"/>
+        </svg>
+    </div>
+<!-- =============================================
+     STATS STRIP SECTION
+     ============================================= -->
+<section class="stats-strip">
+    <div class="container">
+        <div class="stats-strip-grid">
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="bi bi-folder-fill"></i></div>
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="bi bi-puzzle-fill"></i></div>
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Modules Developed</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
+                <div class="stat-number" data-target="6">0</div>
+                <div class="stat-label">User Role Types</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="bi bi-code-slash"></i></div>
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Technologies Used</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Years of Study</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Wave: stats (dark) → projects (bg-off) -->
+    <div class="wave-divider wave-stats-projects">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C360,0 1080,70 1440,30 L1440,70 L0,70 Z"/>
+        </svg>
+    </div>
+<div class="section-editorial-num" data-num="05"><!-- =============================================
+     PROJECTS SECTION — Phase 10/10
+     ============================================= -->
+<section id="projects" class="projects-section">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-eyebrow">What I've Built</span>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Real-world systems built from scratch — designed, developed, and deployed.</p>
+        </div>
+
+        <div class="projects-list">
+
+            <!-- ── Project 1 — Nehemiah Solutions ── -->
+            <div class="project-full-card reveal">
+                <div class="project-full-inner">
+
+                    <!-- Stacked Screenshots with lightbox -->
+                    <div class="project-screenshots">
+                        <div class="project-gallery-badge badge--ojt"><i class="bi bi-building me-1"></i>OJT / Internship</div>
+                        <div class="screenshot-stack">
+                            <img src="assets/images/nehemiah_ss1.png" alt="Nehemiah - Org Selector" class="screenshot-img lightbox-trigger" data-gallery="nehemiah" data-index="0" data-caption="Nehemiah — Organization Selector">
+                            <img src="assets/images/nehemiah_ss2.png" alt="Nehemiah - Chat App" class="screenshot-img lightbox-trigger" data-gallery="nehemiah" data-index="1" data-caption="Nehemiah — Internal Chat Application">
+                            <img src="assets/images/nehemiah_ss3.png" alt="Nehemiah - RFID Attendance" class="screenshot-img lightbox-trigger" data-gallery="nehemiah" data-index="2" data-caption="Nehemiah — RFID Attendance System">
+                        </div>
+                        <div class="screenshot-click-hint"><i class="bi bi-arrows-fullscreen"></i> Click to expand</div>
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="project-full-info">
+                        <div class="project-full-header">
+                            <img src="assets/images/nehemiah_logo.png" alt="Nehemiah Solutions" class="project-full-logo">
+                            <div>
+                                <h3 class="project-full-title">Nehemiah Solutions</h3>
+                                <p class="project-full-subtitle">Multi-Organization Management Platform</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            A large-scale <strong>multi-tenant web platform</strong> where each organization operates with its own private database and fully customizable system — supporting clinics, offices, government agencies, financial institutions, and more.
+                        </p>
+
+                        <div class="project-features">
+                            <span class="feature-pill"><i class="bi bi-buildings me-1"></i>Multi-Tenant Architecture</span>
+                            <span class="feature-pill"><i class="bi bi-people me-1"></i>HRIS & Payroll</span>
+                            <span class="feature-pill"><i class="bi bi-calendar-check me-1"></i>Booking System</span>
+                            <span class="feature-pill"><i class="bi bi-box-seam me-1"></i>Inventory</span>
+                            <span class="feature-pill"><i class="bi bi-cash-coin me-1"></i>Cashiering</span>
+                            <span class="feature-pill"><i class="bi bi-chat-dots me-1"></i>Messaging App</span>
+                            <span class="feature-pill"><i class="bi bi-diagram-3 me-1"></i>Branch Management</span>
+                            <span class="feature-pill"><i class="bi bi-credit-card me-1"></i>PayMongo Billing</span>
+                            <span class="feature-pill"><i class="bi bi-broadcast me-1"></i>RFID Attendance</span>
+                            <span class="feature-pill"><i class="bi bi-shield-check me-1"></i>Role-Based Access</span>
+                        </div>
+
+                        <div class="project-meta-row">
+                            <div class="project-meta-item">
+                                <i class="bi bi-person-badge-fill"></i>
+                                <div><span class="meta-label">Role</span><span class="meta-value">Full-Stack Developer</span></div>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="bi bi-layers-fill"></i>
+                                <div><span class="meta-label">Modules</span><span class="meta-value">10+ Modules</span></div>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="bi bi-people-fill"></i>
+                                <div><span class="meta-label">User Roles</span><span class="meta-value">6 Role Types</span></div>
+                            </div>
+                        </div>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">jQuery</span>
+                            <span class="tech-tag">PHPMailer</span>
+                            <span class="tech-tag">RFID</span>
+                            <span class="tech-tag">PayMongo API</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Project 2 — SunHRise ── -->
+            <div class="project-full-card reveal">
+                <div class="project-full-inner project-full-inner--reverse">
+
+                    <!-- Stacked Screenshots with lightbox -->
+                    <div class="project-screenshots">
+                        <div class="project-gallery-badge badge--capstone"><i class="bi bi-mortarboard-fill me-1"></i>School Capstone</div>
+                        <div class="screenshot-stack">
+                            <img src="assets/images/sunhrise_ss1.png" alt="SunHRise - Landing Page" class="screenshot-img lightbox-trigger" data-gallery="sunhrise" data-index="0" data-caption="SunHRise — Landing Page">
+                            <img src="assets/images/sunhrise_ss2.png" alt="SunHRise - Manager Dashboard" class="screenshot-img lightbox-trigger" data-gallery="sunhrise" data-index="1" data-caption="SunHRise — Manager Dashboard">
+                            <img src="assets/images/sunhrise_ss3.png" alt="SunHRise - Attendance Reports" class="screenshot-img lightbox-trigger" data-gallery="sunhrise" data-index="2" data-caption="SunHRise — Attendance & DTR Reports">
+                        </div>
+                        <div class="screenshot-click-hint"><i class="bi bi-arrows-fullscreen"></i> Click to expand</div>
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="project-full-info">
+                        <div class="project-full-header">
+                            <img src="assets/images/sunhrise_logo.png" alt="SunHRise" class="project-full-logo">
+                            <div>
+                                <h3 class="project-full-title">SunHRise</h3>
+                                <p class="project-full-subtitle">Web-Based Human Resources Information System</p>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            A dedicated <strong>HRIS web application</strong> developed for Carmen Sunrise Exporters as a school capstone project. The system streamlines employee management, automates payroll processing, handles leave credits, and integrates RFID-based attendance tracking.
+                        </p>
+
+                        <div class="project-features">
+                            <span class="feature-pill"><i class="bi bi-people me-1"></i>Employee Management</span>
+                            <span class="feature-pill"><i class="bi bi-cash-stack me-1"></i>Payroll & Payslips</span>
+                            <span class="feature-pill"><i class="bi bi-calendar2-check me-1"></i>Leave Management</span>
+                            <span class="feature-pill"><i class="bi bi-broadcast me-1"></i>RFID Attendance</span>
+                            <span class="feature-pill"><i class="bi bi-file-earmark-bar-graph me-1"></i>DTR & Reports</span>
+                            <span class="feature-pill"><i class="bi bi-bell me-1"></i>Notifications</span>
+                            <span class="feature-pill"><i class="bi bi-shield-lock me-1"></i>HR & Manager Roles</span>
+                            <span class="feature-pill"><i class="bi bi-archive me-1"></i>Archive & Restore</span>
+                        </div>
+
+                        <div class="project-meta-row">
+                            <div class="project-meta-item">
+                                <i class="bi bi-person-badge-fill"></i>
+                                <div><span class="meta-label">Role</span><span class="meta-value">Full-Stack Developer</span></div>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="bi bi-building"></i>
+                                <div><span class="meta-label">Client</span><span class="meta-value">Carmen Sunrise Exporters</span></div>
+                            </div>
+                            <div class="project-meta-item">
+                                <i class="bi bi-cpu"></i>
+                                <div><span class="meta-label">Integration</span><span class="meta-value">RFID Hardware</span></div>
+                            </div>
+                        </div>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">RFID Integration</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GitHub CTA -->
+        <div class="projects-github-cta reveal">
+            <i class="bi bi-github projects-github-icon"></i>
+            <p>View my code and repositories on GitHub</p>
+            <a href="https://github.com/Axl-ui" target="_blank" class="btn-outline-custom">
+                <i class="bi bi-github me-2"></i>Visit GitHub Profile
+            </a>
+        </div>
+
+    </div>
+</section>
+</div>
+
+    <!-- Wave: projects (bg-off) → contact (dark) -->
+    <div class="wave-divider wave-top-contact">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C480,70 960,0 1440,40 L1440,70 L0,70 Z"/>
+        </svg>
+    </div>
+<div class="section-editorial-num" data-num="06"><!-- =============================================
+     CONTACT SECTION — Phase 3.7
+     ============================================= -->
+<section id="contact" class="contact-section">
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Let's Connect</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind, an opportunity to offer, or just want to say hello? I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-layout">
+
+            <!-- Left — Contact Info -->
+            <div class="contact-info reveal">
+
+                <div class="contact-intro">
+                    <p>I'm currently open to new opportunities — whether it's a full-time role, freelance project, or collaboration. Feel free to reach out through any of the channels below.</p>
+                </div>
+
+                <div class="contact-cards">
+
+                    <a href="#contact" class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">akmg991@gmail.com</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right contact-card-arrow"></i>
+                    </a>
+
+                    <a href="tel:09513882566" class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Phone</span>
+                            <span class="contact-card-value">0951 388 2566</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right contact-card-arrow"></i>
+                    </a>
+
+                    <a href="https://github.com/Axl-ui" target="_blank" class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="bi bi-github"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">GitHub</span>
+                            <span class="contact-card-value">github.com/Axl-ui</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right contact-card-arrow"></i>
+                    </a>
+
+                    <div class="contact-card contact-card--static">
+                        <div class="contact-card-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Location</span>
+                            <span class="contact-card-value">Panabo City, Davao del Norte, Philippines</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Availability Badge -->
+                <div class="contact-availability">
+                    <span class="availability-dot"></span>
+                    <span>Available for opportunities — graduating <strong>June 2026</strong></span>
+                </div>
+
+            </div>
+
+            <!-- Right — Contact Form -->
+            <div class="contact-form-wrap reveal">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-person"></i>
+                            <input type="text" id="contactName" name="name" placeholder="Your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-envelope"></i>
+                            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-chat-square-text"></i>
+                            <input type="text" id="contactSubject" name="subject" placeholder="What's this about?" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <div class="input-wrap input-wrap--textarea">
+                            <i class="bi bi-pencil"></i>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-submit-text">
+                            <i class="bi bi-send-fill me-2"></i>Send Message
+                        </span>
+                        <span class="btn-submit-loading" style="display:none;">
+                            <span class="spinner"></span> Sending...
+                        </span>
+                    </button>
+
+                    <div class="form-success" id="formSuccess" style="display:none;">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Message sent! I'll get back to you soon.</span>
+                    </div>
+
+                    <div class="form-error" id="formError" style="display:none;">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <span>Something went wrong. Please email me directly.</span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</div>
+</main>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">AKMG</div>
+                <p class="footer-brand-desc">Full-Stack Developer crafting real-world systems with clean, purposeful code.</p>
+                <div class="footer-socials">
+                    <a href="mailto:akmg991@gmail.com" class="footer-social-btn" title="Email" aria-label="Send Email">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                    <a href="https://github.com/Axl-ui" target="_blank" class="footer-social-btn" title="GitHub" aria-label="GitHub Profile">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="tel:09513882566" class="footer-social-btn" title="Phone" aria-label="Call">
+                        <i class="bi bi-telephone-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav-col">
+                <h4 class="footer-nav-heading">Navigate</h4>
+                <a href="#about" class="footer-nav-link">About</a>
+                <a href="#skills" class="footer-nav-link">Skills</a>
+                <a href="#education" class="footer-nav-link">Education</a>
+                <a href="#experience" class="footer-nav-link">Experience</a>
+                <a href="#projects" class="footer-nav-link">Projects</a>
+                <a href="#contact" class="footer-nav-link">Contact</a>
+            </nav>
+            <div class="footer-contact-col">
+                <h4 class="footer-nav-heading">Get In Touch</h4>
+                <p class="footer-contact-item"><i class="bi bi-envelope"></i> akmg991@gmail.com</p>
+                <p class="footer-contact-item"><i class="bi bi-telephone"></i> 09513882566</p>
+                <p class="footer-contact-item"><i class="bi bi-geo-alt"></i> Davao del Norte, Philippines</p>
+                <div class="footer-availability">
+                    <span class="availability-dot"></span>
+                    Available for opportunities
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-line"></div>
+            <div class="footer-bottom-row">
+                <p class="footer-copy">&copy; <span id="footerYear"></span> Axl Kenji M. Garcia. All rights reserved.</p>
+                <a href="#hero" class="footer-back-top" aria-label="Back to top">
+                    <i class="bi bi-arrow-up"></i> Back to top
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+</button>
+
+<!-- Main JS -->
+<script>document.getElementById("footerYear").textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
