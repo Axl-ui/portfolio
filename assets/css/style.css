@@ -2221,6 +2221,267 @@ section { padding: 100px 0; }
 }
 
 /* ── Skill Icon Cards ── */
+/* ══════════════════════════════════════════
+   SKILLS SHOWCASE — Bold Redesign
+   ══════════════════════════════════════════ */
+.skills-showcase {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.skills-row-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.75fr;
+    gap: 20px;
+    align-items: stretch;
+}
+.skills-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 0.55fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Base card */
+.skcard {
+    border-radius: 24px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s ease;
+    cursor: default;
+}
+.skcard:hover { transform: translateY(-6px); }
+
+/* Background ghost number */
+.skcard-bg-num {
+    position: absolute;
+    bottom: -16px; right: 16px;
+    font-family: var(--font-display);
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.06;
+    color: currentColor;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Category tag */
+.skcard-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+}
+.skcard-tag--light {
+    background: rgba(201,168,76,0.2);
+    color: var(--accent);
+}
+
+/* Big icon */
+.skcard-icon-wrap {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+/* Card title */
+.skcard-title {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 20px 0;
+    color: #fff;
+}
+
+/* Skill pills inside cards */
+.skcard-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skpill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.skpill:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+/* ── Frontend — deep navy with electric blue accent ── */
+.skcard--frontend {
+    background: linear-gradient(135deg, #0d1f3c 0%, #1a3a6b 100%);
+    box-shadow: 0 8px 32px rgba(13,31,60,0.25);
+}
+.skcard--frontend .skcard-icon-wrap { color: #61dafb; }
+.skcard--frontend:hover { box-shadow: 0 20px 48px rgba(13,31,60,0.35); }
+
+/* ── Backend — rich purple-slate ── */
+.skcard--backend {
+    background: linear-gradient(135deg, #2d1b69 0%, #4a3a8f 100%);
+    box-shadow: 0 8px 32px rgba(45,27,105,0.3);
+}
+.skcard--backend .skcard-icon-wrap { color: #fb7a24; }
+.skcard--backend:hover { box-shadow: 0 20px 48px rgba(45,27,105,0.4); }
+
+/* ── Database — dark teal ── */
+.skcard--database {
+    background: linear-gradient(135deg, #00424f 0%, #006b7a 100%);
+    box-shadow: 0 8px 32px rgba(0,66,79,0.3);
+}
+.skcard--database .skcard-icon-wrap { color: #4ecdc4; }
+.skcard--database:hover { box-shadow: 0 20px 48px rgba(0,66,79,0.4); }
+
+/* ── Tools strip — light card ── */
+.skcard--tools {
+    background: #fff;
+    border: 1px solid rgba(13,31,60,0.08);
+    box-shadow: 0 4px 20px rgba(13,31,60,0.06);
+}
+.skcard--tools:hover { box-shadow: 0 16px 40px rgba(13,31,60,0.12); }
+.skcard--tools .skcard-tag {
+    background: rgba(13,31,60,0.06);
+    color: var(--primary);
+}
+.sktools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 4px;
+}
+.sktool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 8px;
+    border-radius: 16px;
+    background: var(--bg-off);
+    border: 1px solid rgba(13,31,60,0.06);
+    transition: all 0.25s ease;
+    text-align: center;
+}
+.sktool-item:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13,31,60,0.2);
+}
+.sktool-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    transition: background 0.25s ease;
+}
+.sktool-item:hover .sktool-icon {
+    background: var(--accent);
+    color: var(--primary);
+}
+.sktool-item span {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+    transition: color 0.25s ease;
+}
+.sktool-item:hover span { color: rgba(255,255,255,0.85); }
+
+/* ── Learning card — dark with glow orbs ── */
+.skcard--learning {
+    background: linear-gradient(145deg, #0d1f3c 0%, #1a2e55 100%);
+    box-shadow: 0 8px 32px rgba(13,31,60,0.3);
+}
+.skcard--learning:hover { box-shadow: 0 20px 56px rgba(13,31,60,0.45); }
+
+.sklearning-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.sklearning-orb--1 {
+    width: 120px; height: 120px;
+    top: -30px; right: -30px;
+    background: radial-gradient(circle, rgba(201,168,76,0.3) 0%, transparent 70%);
+}
+.sklearning-orb--2 {
+    width: 80px; height: 80px;
+    bottom: -20px; left: 20px;
+    background: radial-gradient(circle, rgba(97,218,251,0.2) 0%, transparent 70%);
+}
+.sklearning-techs {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0 16px;
+}
+.sklearning-tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 0.88rem;
+}
+.sklearning-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.sklearning-divider {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 24px;
+}
+.sklearning-note {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skills-row-1 { grid-template-columns: 1fr 1fr; }
+    .skcard--database { grid-column: 1 / -1; }
+    .skcard--database .skcard-title { font-size: 1.1rem; }
+    .sktools-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+    .skills-row-1, .skills-row-2 { grid-template-columns: 1fr; }
+    .skcard--database { grid-column: auto; }
+    .sktools-grid { grid-template-columns: repeat(3, 1fr); }
+    .skcard { padding: 24px; }
+}
+@media (max-width: 480px) {
+    .sktools-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 .skill-cards-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
