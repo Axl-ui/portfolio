@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     counterObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.15 });
         statNums.forEach(el => counterObserver.observe(el));
     }
 

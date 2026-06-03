@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Axl Kenji M. Garcia — Full-Stack Developer Portfolio">
     <meta name="author" content="Axl Kenji M. Garcia">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Axl Kenji M. Garcia | Full-Stack Developer">
+    <meta property="og:description" content="4th-year IS student who ships real systems — multi-tenant platforms, HRIS, RFID integration, and more.">
+    <meta property="og:image" content="assets/images/profile.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axl-ui.github.io/portfolio/">
     <title>Axl Kenji M. Garcia | Full-Stack Developer</title>
 
     <!-- Google Fonts -->
@@ -111,9 +117,9 @@
                 BS Information Systems · Davao del Norte State College
             </p>
             <p class="hero-bio">
-                I build practical, real-world web applications — from HR management systems
-                to multi-organization platforms. Passionate about turning complex problems
-                into clean, functional solutions.
+                4th-year IS student who ships real systems — not just assignments.
+                From RFID attendance kiosks to multi-tenant SaaS platforms, I build things that
+                actually get used.
             </p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">
@@ -147,6 +153,7 @@
                 <div class="hero-avatar">
                     <img src="assets/images/profile.jpg"
                          alt="Axl Kenji M. Garcia"
+                         loading="lazy"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="hero-avatar-placeholder">
                         <span>AKG</span>
@@ -324,57 +331,6 @@
     </div>
 </section>
 </div>
-<section id="whatido" class="whatido-section">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label">My Expertise</span>
-            <h2 class="section-title">What I Do</h2>
-            <p class="section-subtitle">I build systems that work — from the database up to the user interface.</p>
-        </div>
-
-        <div class="whatido-grid" data-lenis-prevent>
-            <div class="whatido-card" data-aos="fade-up" data-aos-delay="0">
-                <div class="whatido-icon">
-                    <i class="bi bi-code-slash"></i>
-                </div>
-                <h3 class="whatido-title">Web Development</h3>
-                <p class="whatido-desc">Building full-stack web applications using PHP, MySQL, JavaScript, and Bootstrap — from crafting clean UI to writing solid backend logic.</p>
-                <ul class="whatido-list">
-                    <li><i class="bi bi-check2"></i> PHP & Laravel</li>
-                    <li><i class="bi bi-check2"></i> Responsive UI with Bootstrap</li>
-                    <li><i class="bi bi-check2"></i> REST APIs & AJAX</li>
-                </ul>
-            </div>
-
-            <div class="whatido-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="whatido-icon whatido-icon--db">
-                    <i class="bi bi-database"></i>
-                </div>
-                <h3 class="whatido-title">Database Design</h3>
-                <p class="whatido-desc">Designing efficient, normalized relational databases that power complex systems — from payroll engines to multi-tenant architectures.</p>
-                <ul class="whatido-list">
-                    <li><i class="bi bi-check2"></i> MySQL Schema Design</li>
-                    <li><i class="bi bi-check2"></i> Query Optimization</li>
-                    <li><i class="bi bi-check2"></i> Multi-tenant Structures</li>
-                </ul>
-            </div>
-
-            <div class="whatido-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="whatido-icon whatido-icon--sys">
-                    <i class="bi bi-diagram-3"></i>
-                </div>
-                <h3 class="whatido-title">System Analysis</h3>
-                <p class="whatido-desc">Analyzing business requirements and translating them into functional system designs — from documentation to deployment-ready solutions.</p>
-                <ul class="whatido-list">
-                    <li><i class="bi bi-check2"></i> Requirements Gathering</li>
-                    <li><i class="bi bi-check2"></i> System Documentation</li>
-                    <li><i class="bi bi-check2"></i> Process Flow Design</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
 
     <!-- Wave: white → skills (bg-off) -->
     <div class="wave-divider" style="background:var(--bg-white);">
@@ -390,8 +346,48 @@
 
         <div class="section-header reveal">
             <span class="section-eyebrow">What I Work With</span>
-            <h2 class="section-title">Skills & Technologies</h2>
-            <p class="section-subtitle">A toolkit built through real projects — from capstone to full-scale OJT platforms.</p>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">A toolkit built through real projects — from capstone to full-scale OJT platforms. Currently exploring <strong>React</strong> and <strong>Vue.js</strong> to expand my front-end stack.</p>
+        </div>
+
+        <!-- Expertise Cards -->
+        <div class="whatido-grid reveal" style="margin-bottom: 3rem;">
+            <div class="whatido-card">
+                <div class="whatido-icon">
+                    <i class="bi bi-code-slash"></i>
+                </div>
+                <h3 class="whatido-title">Web Development</h3>
+                <p class="whatido-desc">Building full-stack web applications using PHP, MySQL, JavaScript, and Bootstrap — from crafting clean UI to writing solid backend logic.</p>
+                <ul class="whatido-list">
+                    <li><i class="bi bi-check2"></i> PHP & Laravel</li>
+                    <li><i class="bi bi-check2"></i> Responsive UI with Bootstrap</li>
+                    <li><i class="bi bi-check2"></i> REST APIs & AJAX</li>
+                </ul>
+            </div>
+            <div class="whatido-card">
+                <div class="whatido-icon whatido-icon--db">
+                    <i class="bi bi-database"></i>
+                </div>
+                <h3 class="whatido-title">Database Design</h3>
+                <p class="whatido-desc">Designing efficient, normalized relational databases that power complex systems — from payroll engines to multi-tenant architectures.</p>
+                <ul class="whatido-list">
+                    <li><i class="bi bi-check2"></i> MySQL Schema Design</li>
+                    <li><i class="bi bi-check2"></i> Query Optimization</li>
+                    <li><i class="bi bi-check2"></i> Multi-tenant Structures</li>
+                </ul>
+            </div>
+            <div class="whatido-card">
+                <div class="whatido-icon whatido-icon--sys">
+                    <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 class="whatido-title">System Analysis</h3>
+                <p class="whatido-desc">Analyzing business requirements and translating them into functional system designs — from documentation to deployment-ready solutions.</p>
+                <ul class="whatido-list">
+                    <li><i class="bi bi-check2"></i> Requirements Gathering</li>
+                    <li><i class="bi bi-check2"></i> System Documentation</li>
+                    <li><i class="bi bi-check2"></i> Process Flow Design</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Skill Icon Cards Grid -->
@@ -830,6 +826,10 @@
                             <span class="tech-tag">RFID</span>
                             <span class="tech-tag">PayMongo API</span>
                         </div>
+                        <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted);">
+                            <i class="bi bi-lock-fill" style="color:var(--accent);"></i>
+                            Private repo — deployment in progress
+                        </p>
                     </div>
 
                 </div>
@@ -897,6 +897,10 @@
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">RFID Integration</span>
                         </div>
+                        <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted);">
+                            <i class="bi bi-lock-fill" style="color:var(--accent);"></i>
+                            Private repo — deployed on client's local server
+                        </p>
                     </div>
 
                 </div>
@@ -1124,7 +1128,7 @@
 
                 <div class="contact-cards">
 
-                    <a href="#contact" class="contact-card">
+                    <a href="mailto:akmg991@gmail.com" class="contact-card">
                         <div class="contact-card-icon">
                             <i class="bi bi-envelope-fill"></i>
                         </div>
@@ -1281,7 +1285,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-line"></div>
             <div class="footer-bottom-row">
-                <p class="footer-copy">&copy; <span id="footerYear"></span> Axl Kenji M. Garcia. All rights reserved.</p>
+                <p class="footer-copy"><span id="footerYear"></span> Axl Kenji M. Garcia. All rights reserved.</p>
                 <a href="#hero" class="footer-back-top" aria-label="Back to top">
                     <i class="bi bi-arrow-up"></i> Back to top
                 </a>
@@ -1296,7 +1300,7 @@
 </button>
 
 <!-- Main JS -->
-<script>document.getElementById("footerYear").textContent = new Date().getFullYear();</script>
+<script>document.getElementById("footerYear").textContent = "© " + new Date().getFullYear();</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
