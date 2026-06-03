@@ -88,18 +88,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-link');
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + 120;
-        sections.forEach(section => {
-            if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+
+    const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
                 navItems.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === '#' + section.id);
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
                 });
             }
         });
-    }
-    window.addEventListener('scroll', updateActiveNav, { passive: true });
-    updateActiveNav();
+    }, {
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    });
+
+    sections.forEach(section => navObserver.observe(section));
 
     // ─── Back to Top ──────────────────────────
     const backToTop = document.getElementById('backToTop');
@@ -169,10 +172,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const section = el.closest('section');
         if (!section) return { x: 0, y: 30, rotate: 0 };
         const id = section.id;
-        if (id === 'skills')     return { x: 0, y: 0, scale: 0.85, rotate: -3 };
-        if (id === 'projects')   return { x: -40, y: 0, rotate: 0 };
-        if (id === 'experience') return { x: 40, y: 0, rotate: 0 };
-        if (id === 'contact')    return { x: 0, y: 40, rotate: 0 };
+        if (id === 'skills')        return { x: 0, y: 0, scale: 0.85, rotate: -3 };
+        if (id === 'projects')      return { x: -40, y: 0, rotate: 0 };
+        if (id === 'experience')    return { x: 40, y: 0, rotate: 0 };
+        if (id === 'certificates')  return { x: 0, y: 30, rotate: 0 };
+        if (id === 'contact')       return { x: 0, y: 40, rotate: 0 };
         return { x: 0, y: 32, rotate: 0 };
     }
 
@@ -364,10 +368,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Build gallery registry
         const galleries = {};
-        document.querySelectorAll('.lightbox-trigger').forEach(img => {
-            const gid = img.dataset.gallery;
+        document.querySelectorAll('.lightbox-trigger').forEach(el => {
+            const gid = el.dataset.gallery;
             if (!galleries[gid]) galleries[gid] = [];
-            galleries[gid].push({ src: img.src, caption: img.dataset.caption || '', el: img });
+            const src = el.src || el.dataset.src || '';
+            galleries[gid].push({ src, caption: el.dataset.caption || '', el });
         });
 
         let currentGallery = null;
@@ -421,9 +426,9 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => { lbImg.src = ''; }, 400);
         }
 
-        document.querySelectorAll('.lightbox-trigger').forEach(img => {
-            img.addEventListener('click', () => {
-                openLightbox(img.dataset.gallery, parseInt(img.dataset.index));
+        document.querySelectorAll('.lightbox-trigger').forEach(el => {
+            el.addEventListener('click', () => {
+                openLightbox(el.dataset.gallery, parseInt(el.dataset.index));
             });
         });
 

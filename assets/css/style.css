@@ -3473,6 +3473,7 @@ html.lenis {
     .hero-card          { animation: none; }
     .marquee-track      { animation: none; }
     .lightbox, #lightboxImg { transition: none; }
+}
 
 
 
@@ -4072,3 +4073,324 @@ html.lenis {
         width: 100% !important;
     }
 }
+
+
+/* =============================================
+   CERTIFICATES SECTION
+   ============================================= */
+
+.certificates-section {
+    background: var(--bg-off);
+    padding: 100px 0;
+}
+
+/* =============================================
+   CERTIFICATES SECTION — 10/10 Design
+   ============================================= */
+
+.certificates-section { background: var(--bg-off); }
+
+/* ── Stat bar ── */
+.cert-stat-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-sm);
+}
+
+.cert-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0 40px;
+}
+
+.cert-stat-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.cert-stat-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.cert-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+    flex-shrink: 0;
+}
+
+/* ── Grid layout ── */
+.cert-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cert-row-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.cert-row-small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ── Card shell ── */
+.cert-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+    cursor: pointer;
+    border-left: 4px solid transparent;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ── Left border accent per category ── */
+.cert-border--professional { border-left-color: var(--accent); }
+.cert-border--academic     { border-left-color: var(--primary); }
+.cert-border--tech         { border-left-color: #007acc; }
+.cert-border--community    { border-left-color: #27ae60; }
+
+/* ── Hover glow per category ── */
+.cert-border--professional:hover { box-shadow: var(--shadow-lg), -3px 0 20px rgba(200,150,62,0.18); }
+.cert-border--academic:hover     { box-shadow: var(--shadow-lg), -3px 0 20px rgba(26,53,87,0.18); }
+.cert-border--tech:hover         { box-shadow: var(--shadow-lg), -3px 0 20px rgba(0,122,204,0.18); }
+.cert-border--community:hover    { box-shadow: var(--shadow-lg), -3px 0 20px rgba(39,174,96,0.18); }
+
+/* ── Thumbnail ── */
+.cert-thumb {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #e8edf3;
+    flex-shrink: 0;
+}
+
+.cert-card--hero .cert-thumb  { padding-top: 56%; }
+.cert-card--small .cert-thumb { padding-top: 62%; }
+
+.cert-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+    display: block;
+}
+
+.cert-thumb img.cert-crop--top    { object-position: top center; }
+.cert-thumb img.cert-crop--center { object-position: 50% 15%; }
+
+.cert-card:hover .cert-thumb img { transform: scale(1.05); }
+
+/* ── Overlay ── */
+.cert-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 28, 47, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.cert-card:hover .cert-thumb-overlay { opacity: 1; }
+
+.cert-overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+
+.cert-overlay-content i {
+    font-size: 1.6rem;
+}
+
+.cert-overlay-content span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Card body ── */
+.cert-card-inner {
+    padding: 18px 20px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+}
+
+.cert-card--hero .cert-card-inner {
+    padding: 20px 24px 20px 20px;
+    gap: 9px;
+}
+
+/* ── Top row: badge + year ── */
+.cert-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.cert-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+}
+
+/* ── Badge ── */
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.cert-badge i { font-size: 0.6rem; }
+
+.cert-badge--tech         { background: rgba(0,122,204,0.1);   color: #007acc; }
+.cert-badge--professional { background: rgba(200,150,62,0.12); color: var(--accent); }
+.cert-badge--academic     { background: rgba(26,53,87,0.08);   color: var(--primary); }
+.cert-badge--community    { background: rgba(39,174,96,0.1);   color: #27ae60; }
+
+/* ── Text ── */
+.cert-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.cert-card--hero  .cert-title { font-size: 1.1rem; }
+.cert-card--small .cert-title { font-size: 0.9rem; }
+
+.cert-issuer,
+.cert-date {
+    font-size: 0.77rem;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+}
+
+.cert-issuer i,
+.cert-date i {
+    color: var(--text-light);
+    font-size: 0.72rem;
+    flex-shrink: 0;
+}
+
+/* ── CTA Button (hero cards only) ── */
+.cert-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: var(--transition);
+}
+
+.cert-view-btn i { transition: transform 0.25s ease; }
+.cert-view-btn:hover i { transform: translateX(4px); }
+
+.cert-view-btn--professional {
+    background: rgba(200,150,62,0.1);
+    color: var(--accent);
+}
+.cert-view-btn--professional:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.cert-view-btn--academic {
+    background: rgba(26,53,87,0.08);
+    color: var(--primary);
+}
+.cert-view-btn--academic:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .cert-row-hero  { grid-template-columns: 1fr 1fr; }
+    .cert-row-small { grid-template-columns: repeat(2, 1fr); }
+    .cert-stat { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .cert-row-hero,
+    .cert-row-small { grid-template-columns: 1fr; }
+    .certificates-section { padding: 72px 0; }
+    .cert-card--hero .cert-thumb  { padding-top: 60%; }
+    .cert-card--small .cert-thumb { padding-top: 60%; }
+    .cert-stat-bar { flex-direction: column; gap: 16px; padding: 20px; }
+    .cert-stat-divider { width: 60px; height: 1px; }
+}
+
+/* ── Small card view link ── */
+.cert-view-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+    transition: color 0.25s ease;
+}
+.cert-view-sm i { font-size: 0.65rem; transition: transform 0.25s ease; }
+.cert-card:hover .cert-view-sm { color: var(--accent); }
+.cert-card:hover .cert-view-sm i { transform: translateX(3px); }
